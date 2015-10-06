@@ -1,48 +1,117 @@
-/*Global Style*/
 * {
 	margin:0;
+	box-sizing:border-box;
 }
 html {
-
+	background: url('../images/geometry2.png');
 }
 body {
-
+	font-family: 'Open Sans', sans-serif;
+	margin-right: 320px;
+	background: white;
+}
+h1,h2 {
+	text-transform: uppercase;
+}
+h1 {
+	font-size: 50px;
+	margin-bottom:20px;
+}
+h2 {
+}
+p {
+	margin-top: 20px;
+	line-height: 24px;
+	color: rgba(0,0,0,0.5)
+}
+.hero p {
 }
 section {
-	
+	max-width: 680px;
+	margin:auto;
+	overflow: auto;
+	padding: 50px 0;
+	border-top:1px solid rgba(0,0,0,.2);
 }
-/*Grid*/
-.row {
-  overflow:auto;
-}
-.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12 {
-  float:left;
-}
-.col-1 {width:8.333333333%}
-.col-2 {width:16.666666666%}
-.col-3 {width:24.999999999%}
-.col-4 {width:33.333333333%}
-.col-5 {width:41.666666666%}
-.col-6 {width:50.000000000%}
-.col-7 {width:58.333333333%}
-.col-8 {width:66.666666666%}
-.col-9 {width:74.999999999%}
-.col-10 {width:83.33333333%}
-.col-11 {width:91.66666666%}
-.col-12 {width:100.000000000%}
-
-/*header*/
 header {
-
+	padding-top:60px;
 }
-/*hero*/
-
-/*about*/
-
-/*events*/
-
-/*people*/
-
-/*contact*/
-
-/*footer*/
+.container {
+	max-width: 680px;
+	margin:auto;
+}
+header a {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 20px;
+	color: #006feb;
+}
+header a b {
+	color: #e4b43a
+}
+section:first-of-type {
+	border-top:none;
+}
+img {
+	width: 100%;
+}
+.col-4 {
+	width: 33.3333333333%;
+	margin-top: 40px;
+	float: left;
+	padding-right: 20px;
+}
+.col-4:nth-of-type(3n) {
+	padding-right: 0;
+	padding-left: 20px;
+}
+.col-4:nth-of-type(3n - 1) {
+	padding-left: 10px;
+	padding-right: 10px
+}
+.hero-image {
+	background-image:url('../images/uvic-circle.jpg');
+	background-position: center;
+	background-size: cover;
+	width: 320px;
+	height: 100vh;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.people .col-4 strong {
+	display: block;
+	margin:20px 0 5px;
+}
+.people .col-4 span {
+	color: rgba(0,0,0,.5);
+}
+footer {
+	background: url('../images/geometry2.png');
+	padding: 80px 0
+}
+.about img {
+	margin-top: 40px;
+}
+ul {
+	padding-left:20px;
+	margin-top:40px;
+}
+li {
+	margin:0;
+	padding: 0;
+}
+ul li a {
+	color: black;
+	font-size: 14px;
+}
+.events ul {
+	margin-top:10px;
+}
+.events ul li {
+	font-size: 14px;
+}
+.events p {
+	margin-top: 5px;
+}
