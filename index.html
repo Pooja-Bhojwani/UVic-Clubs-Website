@@ -1,32 +1,154 @@
-<!doctype html>
 <html>
 	<head>
 		<title>UVic Clubs</title>
-		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+		<!-- Meta Tags -->
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="UVic Clubs website!">
+
+		<!-- Javscript -->
+		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+		
+		<!-- Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
+
+		<!-- Style Sheets -->
 		<link rel="stylesheet" href="css/styles.css" type="text/css" />
 
-		<meta name="description" content="UVic Clubs website!">
 	</head>
 	<body>
-		hello world
+
+		<header class="header" id="header">
+			<div class="container">
+				<a href="">uvic.<b>club</b></a>
+			</div>
+		</header>
+
+		<section class="hero" id="hero">
+			<h1>UVic Web Development and Web Design Club</h1>
+			<p>UVic Web Dev Club is a community that aims to help students bring ideas to life. No matter what facility you're in, or skill set you have, we're here to help.</p>
+		</section>
+
+		<div class="hero-image"></div>
+
+		<section class="about" id="about">
+			<h2>About</h2>
+			<img src="https://i.imgur.com/DdIdDvc.jpg">
+			<p>If you're wanting to spend your future in tech then this is the right place to get your foot in the door. Every week we nerd out about interface design, modern web languages, and cool stuff that's happening in the now. We bring in smart people from cool companies, host hackathons, and overall just have a great time.</p>
+		</section>
+
+		<section class="events" id="events">
+			<h2>Upcoming Events</h2>
+			<div class="col-4">
+				<strong>Making a mvp</strong>
+				<p>If you're wanting to spend your future in tech then this is the right place to get your foot in the door.</p>
+				<ul>
+					<li>Event Date</li>
+					<li>Event Location</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<strong>Work Period</strong>
+				<p>If you're wanting to spend your future in tech then this is the right place to get your foot in the door.</p>
+				<ul>
+					<li>Doge</li>
+					<li>Event Location</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<strong>How to doge</strong>
+				<p>If you're wanting to spend your future in tech then this is the right place to get your foot in the door.</p>
+				<ul>
+					<li>Event Date</li>
+					<li>Event Location</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="people" id="people">
+
+			<h2>Who Run's the SHow</h2>
+			<div class="col-4">
+				<img src="https://pbs.twimg.com/media/CQisr5MVEAAF91y.jpg:large">
+				<strong>Bob Maggot</strong>
+				<span>Test Post please ignore</span>
+			</div>
+
+			<div class="col-4">
+			<img src="https://pbs.twimg.com/media/CQisr5MVEAAF91y.jpg:large">
+			<strong>Bob Maggot</strong>
+			<span>Test Post please ignore</span>
+			</div>
+
+			<div class="col-4">
+				<img src="https://pbs.twimg.com/media/CQisr5MVEAAF91y.jpg:large">
+				<strong>Bob Maggot</strong>
+				<span>Test Post please ignore</span>
+			</div>
+		</section>
+
+
+		<section id="contact">
+			<h2>Contact Us</h2>
+			<ul>
+				<li><a href="#">Email</a></li>
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Twitter</a></li>
+			</ul>
+		</section>
+
+		<footer>
+			<div class="container">
+				<span>©2013-2015 UVic Web Development & Design Club — <a>contact@uvic.club</a></span>
+			</div>
+		</footer>
+
 		<!--
 		<script type="text/javascript">
 			$.getJSON( "https://sheetsu.com/apis/88153a2e/", function( data ) {
-			  console.log(data);
-			  data.result.forEach (function ( row ) {
-			  	$("#hero")
-			  		.append("<h1>" + row.heading + "</h1>")
-			  	$("#people")
-			  		.append("<img src=" + row.url_of_photos + ">")
-			  		.append("<p>" + row.founders_names + "</p>")
+				data.result.forEach (function ( row ) {
+					if(!row.email || ! row.facebook || ! row.twitter) {
+						return
+					}
 			  	$("#contact")
-			  		.append("<img src=" + row.url_of_photos + ">")
-			  		.append("<p>" + row.founders_names + "</p>")
+			  		.append("<ul><li><a href=\"mailto:" + row.email + "\">email<a></li><li><a href=\"" + row.facebook + "\">facebook</a></li><li><a href=\"" + row.twitter +"\">twitter</a></li></ul>")
 		  	})
+			  data.result.forEach (function ( row ) {
+					if(!row.your_clubs_name || ! row.heading ) {
+						return
+					}
+			  	$("#hero")
+			  		.append("<h1>" + row.your_clubs_name + "</h1>")
+			  		.append("<p>" + row.heading + "</p>")
+		  	})
+
+				data.result.forEach (function ( row ) {
+					if(!row.club_image || ! row.about ) {
+						return
+					}
+			  	$("#about")
+			  		.append("<img src=\"" + row.club_image + "\">")
+			  		.append("<p>" + row.about + "</p>")
+		  	})
+
+		  	data.result.forEach (function ( row ) {
+					if(!row.event_titles || ! row.event_description || ! row.event_location || ! row.event_date ) {
+						return
+					}
+			  	$("#events")
+			  		.append("<div class=\"col-4\"><strong>" + row.event_titles + "</strong><p>" + row.event_description + "</p><ul><li>" + row.event_location + "</li><li>" + row.event_date + "</li></ul>")
+		  	})
+
+		  	data.result.forEach (function ( row ) {
+					if(!row.photo_of_club_leader || ! row.club_leaders ) {
+						return
+					}
+			  	$("#people")
+			  		.append("<div class=\"col-4\"> <img src=" + row.photo_of_club_leader + "><strong>" + row.club_leaders + "</strong><span>"+ row.club_leader_heading + "</div>")
+		  	})
+
 			});
 		</script>
 		-->
